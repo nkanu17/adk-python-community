@@ -103,6 +103,35 @@ semantic_cache/
 - `include_user_id` (bool): Include user ID in cache key
 - `include_session_id` (bool): Include session ID in cache key
 
+## Alternative: LangCache Provider
+
+For a managed caching solution, you can use LangCache instead:
+
+```python
+from google.adk_community.cache import (
+    LangCacheProvider,
+    LangCacheProviderConfig,
+    LLMResponseCache,
+    create_llm_cache_callbacks,
+)
+
+provider = LangCacheProvider(
+    config=LangCacheProviderConfig(
+        name="my_cache",
+        ttl=3600,
+        similarity_threshold=0.9,
+    )
+)
+
+llm_cache = LLMResponseCache(provider=provider)
+before_cb, after_cb = create_llm_cache_callbacks(llm_cache)
+```
+
+Install with:
+```bash
+pip install "google-adk-community[langcache]"
+```
+
 ## Tool Caching
 
 You can also cache tool results:
