@@ -48,6 +48,9 @@ test = [
 redis-cache = [
     "redisvl>=0.4.0",
 ]
+langcache = [
+    "langcache>=0.8.0",
+]
 
 
 [tool.pyink]
