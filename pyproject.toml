@@ -45,6 +45,12 @@ test = [
     "pytest>=8.4.2",
     "pytest-asyncio>=1.2.0",
 ]
+redis-cache = [
+    "redisvl>=0.4.0",
+]
+langcache = [
+    "langcache>=0.8.0",
+]
 
 
 [tool.pyink]
